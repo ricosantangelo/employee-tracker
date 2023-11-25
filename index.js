@@ -1,5 +1,16 @@
 import inquirer from 'inquirer';
-import connection from './db/connection.js';
+import connection from './db/connections.js';
+
+inquirer.prompt([
+  {
+    type: 'list',
+    name: 'test',
+    message: 'Choose an option:',
+    choices: ['Option 1', 'Option 2', 'Option 3']
+  }
+]).then(answers => {
+  console.log('You selected:', answers.test);
+});
 
 function startApp() {
   inquirer.prompt([
